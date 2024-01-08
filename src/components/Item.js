@@ -91,7 +91,11 @@ const Item = ({ images, user, title, star, description, attributes, address, id 
                      alt="avatar"
                      className="w-[30px] h-[30px] object-cover rounded-full"
                   />
-                  <p className="pl-[5px] text-[14px]">{user?.name}</p>
+                  <p className="pl-[5px] text-[14px]">
+                     {user?.name && user.name.length > 10
+                        ? `${user.name.slice(0, 15)}...`
+                        : user?.name}
+                  </p>
                </div>
                <div className="flex items-center gap-1">
                   <a
