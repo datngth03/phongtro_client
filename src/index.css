@@ -1,0 +1,131 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import "slick-carousel/slick/slick.css";
+@import "slick-carousel/slick/slick-theme.css";
+
+.root {
+   overflow-y: hidden !important;
+}
+
+.star-item {
+   display: inline-block;
+   margin-bottom: 6px;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+   -webkit-appearance: none;
+   height: 5px;
+}
+
+input[type="range"]::-moz-range-track {
+   -moz-appearance: none;
+   height: 5px;
+}
+
+input[type="range"]::-ms-track {
+   appearance: none;
+   height: 5px;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+   -webkit-appearance: none;
+   width: 1.5rem;
+   height: 1.5rem;
+   background-color: white;
+   border: solid 1px #ccc;
+   border-radius: 1rem;
+   margin-top: -0.6rem;
+   pointer-events: auto;
+   cursor: pointer;
+}
+
+input[type="range"]::-webkit-slider-thumb:active {
+   border: solid 1px rgb(144, 211, 255);
+}
+
+input[type="range"]::-moz-range-thumb {
+   -moz-appearance: none;
+   width: 1.5rem;
+   height: 1.5rem;
+   background-color: white;
+   border: solid 1px #ccc;
+   border-radius: 1rem;
+   margin-top: -0.6rem;
+   pointer-events: auto;
+   cursor: pointer;
+}
+
+input[type="range"]::-moz-range-thumb:active {
+   border: solid 1px rgb(144, 211, 255);
+}
+
+input[type="range"]::-ms-thumb {
+   appearance: none;
+   width: 1.5rem;
+   height: 1.5rem;
+   background-color: white;
+   border: solid 1px #ccc;
+   border-radius: 1rem;
+   margin-top: -0.6rem;
+   pointer-events: auto;
+   cursor: pointer;
+}
+
+input[type="range"]::-ms-thumb:active {
+   border: solid 1px rgb(144, 211, 255);
+}
+/* #track-active {
+   transition: left 0.3s, right 0.3s;
+} */
+
+@keyframes slide-right {
+   0% {
+      -webkit-transform: translateX(0);
+      transform: translateX(0);
+   }
+
+   100% {
+      -webkit-transform: translateX(100px);
+      transform: translateX(100px);
+   }
+}
+
+button.slick-arrow::before {
+   font-size: 40px !important;
+   color: yellowgreen !important;
+}
+
+.slick-next {
+   right: 35px !important;
+}
+.slick-prev {
+   left: 10px !important;
+   z-index: 10 !important;
+}
+/* CSS cho Slider Dot */
+.slick-dots {
+   display: flex !important;
+   justify-content: center;
+   list-style: none;
+   padding: 0;
+   margin: 0;
+}
+
+.slick-dots li {
+   width: 10px;
+   height: 10px;
+   background-color: #bbb;
+   border-radius: 50%;
+   margin: 0 5px;
+   cursor: pointer;
+   transition: background-color 0.3s ease;
+}
+
+.slick-dots li.slick-active {
+   background-color: yellowgreen;
+}
+/* Ẩn chữ số bên trong dots */
+.slick-dots li button:before {
+   content: none; /* hoặc content: ""; */
+}

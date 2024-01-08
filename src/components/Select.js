@@ -1,0 +1,74 @@
+import React, { memo } from "react";
+
+const Select = ({
+   label,
+   options,
+   value,
+   setValue,
+   type,
+   reset,
+   name,
+   inValidFields,
+   setInValidFields,
+}) => {
+   const handleErrorTextNormal = () => {
+      let nameInValid = inValidFields.find((item) => item.name === name);
+      return `${nameInValid ? nameInValid.message : ""}`;
+   };
+   const handleErrorTextAddress = () => {
+      let addressInValid = inValidFields.find((item) => item.name === "address");
+      return `${addressInValid ? addressInValid.message : ""}`;
+   };
+
+   return (
+      <div className="flex flex-col gap-2 flex-1">
+         <label className="font-medium" htmlFor="select-address">
+            {label}
+         </label>
+         <select
+            value={reset ? "" : value}
+            onChange={(e) =>
+               !name
+                  ? setValue(e.target.value)
+                  : setValue((prev) => ({ ...prev, [name]: e.target.value }))
+            }
+            id="select-address"
+            className="outline-none border border-gray-300 p-2 rounded-md w-full"
+            onFocus={() => setInValidFields([])}
+         >
+            <option value="">{`--Chọn ${label}--`}</option>
+            {options?.map((item) => {
+               return (
+                  <option
+                     key={
+                        type === "province"
+                           ? item?.code
+                           : type === "district"
+                           ? item?.code
+                           : item?.code
+                     }
+                     value={
+                        type === "province"
+                           ? item?.code
+                           : type === "district"
+                           ? item?.code
+                           : item?.code
+                     }
+                  >
+                     {type === "province"
+                        ? item?.name
+                        : type === "district"
+                        ? item?.name
+                        : item?.value}
+                  </option>
+               );
+            })}
+         </select>
+         <small className="text-red-500">
+            {name ? handleErrorTextNormal() : handleErrorTextAddress()}
+         </small>
+      </div>
+   );
+};
+
+export default memo(Select);
