@@ -10,22 +10,22 @@ const User = () => {
    const avatarSrc = currentData?.avatar
       ? blobToBase64(currentData.avatar) || anonAvatar
       : anonAvatar;
-   const navigate = useNavigate();
+   // const navigate = useNavigate();
 
-   const handleNavigate = () => {
-      // Use the navigate function to redirect to the "/he-thong" route
-      navigate("/he-thong");
-   };
+   // const handleNavigate = () => {
+   //    navigate("/he-thong");
+   // };
    return (
       <>
          {currentData && Object.keys(currentData).length > 0 && (
             <div className="flex items-center gap-2">
-               <img
-                  src={avatarSrc}
-                  alt="avatar"
-                  className="w-10 object-cover rounded-full h-10 border-2 shadow-md border-white cursor-pointer"
-                  onClick={handleNavigate}
-               />
+               <a href="/he-thong/quan-ly-bai-dang">
+                  <img
+                     src={avatarSrc}
+                     alt="avatar"
+                     className="w-10 object-cover rounded-full h-10 border-2 shadow-md border-white cursor-pointer"
+                  />
+               </a>
                <div className="flex flex-col">
                   <span>
                      Xin chào, <span className="font-semibold">{currentData?.name}</span>

@@ -19,19 +19,25 @@ const ProvinceBtn = ({ name, image, provinceCode }) => {
       );
    };
    return (
-      <div
-         className="shadow-md overflow-hidden text-blue-700 cursor-pointer hover:text-orange-600 rounded-tl-md rounded-tr-md"
-         onClick={handleClick}
+      <a
+         href={`${path.SEARCH}?${createSearchParams({ provinceCode }).toString()}`}
+         // className="shadow-md overflow-hidden text-blue-700 cursor-pointer hover:text-orange-600 rounded-tl-md rounded-tr-md"
+         // onClick={handleClick}
       >
-         <div className="relative">
-            <img
-               src={image}
-               alt={name}
-               className="w-[190px] h-[110px] object-cover rounded-tl-md rounded-tr-md transition-transform transform hover:scale-110 duration-300"
-            />
+         <div
+            className="shadow-md overflow-hidden text-blue-700 cursor-pointer hover:text-orange-600 rounded-tl-md rounded-tr-md"
+            // onClick={handleClick}
+         >
+            <div className="relative">
+               <img
+                  src={image}
+                  alt={name}
+                  className="w-[190px] h-[110px] object-cover rounded-tl-md rounded-tr-md transition-transform transform hover:scale-110 duration-300"
+               />
+            </div>
+            <div className="font-medium px-2 py-3 text-center">{name}</div>
          </div>
-         <div className="font-medium px-2 py-3 text-center">{name}</div>
-      </div>
+      </a>
    );
 };
 
