@@ -19,7 +19,7 @@ const Item = ({ images, user, title, star, description, attributes, address, id 
       return stars;
    };
    const handleNavigate = (e) => {
-      e.preventDefault();
+      // e.preventDefault();
       navigate(`${path.DETAIL}${formatVietnameseToString(title?.replaceAll("/", ""))}/${id}`);
    };
    return (
@@ -29,25 +29,25 @@ const Item = ({ images, user, title, star, description, attributes, address, id 
             // to={`chi-tiet/${formatVietnameseToString(title)}/${id}`}
             className="w-2/5 flex flex-wrap gap-[2px] items-center relative cursor-pointer"
          >
-            <a
+            {/* <a
                href={`${path.DETAIL}${formatVietnameseToString(title?.replaceAll("/", ""))}/${id}`}
                // onClick={handleNavigate}
-               className="w-2/5 flex flex-wrap gap-[2px] items-center relative cursor-pointer"
-            >
-               {images.length > 0 &&
-                  images
-                     .filter((i, index) => [...Array(4).keys()].some((i) => i === index))
-                     ?.map((i, index) => {
-                        return (
-                           <img
-                              key={index}
-                              src={i}
-                              alt="preview"
-                              className="w-[47%] h-[120px] object-cover"
-                           />
-                        );
-                     })}
-            </a>
+               className=" flex flex-wrap gap-[2px] items-center relative cursor-pointer"
+            > */}
+            {images.length > 0 &&
+               images
+                  .filter((i, index) => [...Array(4).keys()].some((i) => i === index))
+                  ?.map((i, index) => {
+                     return (
+                        <img
+                           key={index}
+                           src={i}
+                           alt="preview"
+                           className="w-[47%] h-[120px] object-cover"
+                        />
+                     );
+                  })}
+            {/* </a> */}
             <span className="bg-black bg-opacity-30 text-white px-2 rounded-md absolute left-1 bottom-4">{`${images.length} ảnh`}</span>
             <span
                className="text-white absolute right-5 bottom-1"
