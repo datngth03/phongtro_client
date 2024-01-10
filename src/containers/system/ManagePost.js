@@ -102,7 +102,11 @@ const ManagePost = () => {
                {posts.length === 0 ? (
                   <tr>
                      <td className="p-4" colSpan={7}>
-                        Bạn chưa có tin đăng nào!
+                        Bạn chưa có tin đăng nào! Đăng tin
+                        <a href="/tao-moi-bai-dang" className="text-blue-500">
+                           tại đây
+                        </a>
+                        .
                      </td>
                   </tr>
                ) : (
