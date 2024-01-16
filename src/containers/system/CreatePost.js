@@ -69,6 +69,7 @@ const CreatePost = ({ isEdit }) => {
       for (let i of files) {
          formData.append("file", i);
          formData.append("upload_preset", process.env.REACT_APP_UPLOAD_ASSETS_NAME);
+         console.log(formData);
          let response = await apiUploadImages(formData);
          if (response.status === 200) images = [...images, response.data?.secure_url];
       }
