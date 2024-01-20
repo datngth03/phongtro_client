@@ -55,7 +55,7 @@ const DetailPost = () => {
                   <MdLocationOn style={{ color: "blue" }} />
                   <address>{posts[0]?.address}</address>
                </div>
-               <div className="flex items-center justify-between w-3/5">
+               <div className="flex items-center justify-between w-4/5">
                   <span className="flex items-center gap-1">
                      <GiMoneyStack style={{ color: "grey" }} />
                      <span className="text-green-500 text-xl font-bold">
