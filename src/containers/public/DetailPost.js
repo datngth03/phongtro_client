@@ -23,7 +23,7 @@ const DetailPost = () => {
    useEffect(() => {
       postId && dispatch(getPostsLimit({ id: postId }));
    }, [postId]);
-
+   console.log(posts[0]);
    const handleFilter = () => {
       let titleSearch = `Tìm kiếm tin đăng theo chuyên mục ${posts[0]?.labels?.value}`;
       navigate(
@@ -150,7 +150,7 @@ const DetailPost = () => {
             <div className="flex flex-col p-6 pt-0 relative">
                <h2 className="font-semibold text-xl pb-4">Bản đồ</h2>
                {/* {posts[0] && <Map address={posts[0].address} />} */}
-               {posts[0]}
+               {/* {posts[0]} */}
 
                <div className="pt-8 text-gray-500">
                   Bạn đang xem nội dung tin đăng:{" "}
