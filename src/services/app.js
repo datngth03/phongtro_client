@@ -42,7 +42,7 @@ export const apiGetPublicProvinces = () =>
       try {
          const response = await axiosDefault({
             method: "get",
-            url: "https://provinces.open-api.vn/api/p",
+            url: "https://vapi.vnappmob.com/api/province",
          });
          resolve(response);
       } catch (error) {
@@ -54,7 +54,7 @@ export const apiGetPublicDistrict = (provinceCode) =>
       try {
          const response = await axiosDefault({
             method: "get",
-            url: `https://provinces.open-api.vn/api/p/${provinceCode}?depth=2`,
+            url: `https://vapi.vnappmob.com/api/province/district/${provinceCode}`,
          });
          resolve(response);
       } catch (error) {

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Overview, Address, Loading, Button, Map } from "../../components";
+import { Overview, Address, Loading, Button } from "../../components";
 import { apiUploadImages } from "../../services";
 import icons from "../../ultils/icons";
 import { getCodes, getCodesArea } from "../../ultils/Common/getCodes";
@@ -217,7 +217,7 @@ const CreatePost = ({ isEdit }) => {
                />
             </div>
             <div className="w-[30%] flex flex-col relative">
-               <Map address={payload.address} />
+               {/* <Map address={payload.address} /> */}
                <div className="bg-[#fff3cd] mt-8 p-4 rounded-md shadow-md text-[#856404]">
                   <h4 className="text-2xl font-medium">Lưu ý khi đăng tin</h4>
                   <ul className="list-disc p-4 text-justify">

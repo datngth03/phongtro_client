@@ -15,7 +15,7 @@ const Address = ({ setPayload, inValidFields, setInValidFields }) => {
       const nameProvince =
          provinces.length > 0 &&
          provinces.find((item) => item.name === dataEdit?.address.split(",")[1]);
-      setProvince(nameProvince ? nameProvince.code : "");
+      setProvince(nameProvince ? nameProvince.province_id : "");
    }, [provinces]);
 
    useEffect(() => {
@@ -33,7 +33,8 @@ const Address = ({ setPayload, inValidFields, setInValidFields }) => {
       const fetchPublicProvince = async () => {
          const response = await apiGetPublicProvinces();
          if (response.status === 200) {
-            setProvinces(response?.data);
+            // console.log(response?.data);
+            setProvinces(response?.data.results);
          }
       };
       fetchPublicProvince();
@@ -44,7 +45,7 @@ const Address = ({ setPayload, inValidFields, setInValidFields }) => {
       const fetchPublicDistrict = async () => {
          const response = await apiGetPublicDistrict(province);
          if (response.status === 200) {
-            setDistricts(response.data?.districts);
+            setDistricts(response.data?.results);
          }
       };
       province && fetchPublicDistrict();
@@ -88,8 +89,16 @@ const Address = ({ setPayload, inValidFields, setInValidFields }) => {
             <InputReadOnly
                label="Địa chỉ chính xác"
                value={`${
-                  district ? `${districts?.find((item) => +item.code === +district)?.name}, ` : ""
-               }${province ? provinces?.find((item) => +item.code === +province)?.name : ""}`}
+                  district
+                     ? `${
+                          districts?.find((item) => +item.district_id === +district)?.district_name
+                       }, `
+                     : ""
+               }${
+                  province
+                     ? provinces?.find((item) => +item.province_id === +province)?.province_name
+                     : ""
+               }`}
             />
          </div>
       </div>

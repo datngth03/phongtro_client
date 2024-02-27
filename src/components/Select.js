@@ -42,23 +42,23 @@ const Select = ({
                   <option
                      key={
                         type === "province"
-                           ? item?.code
+                           ? item?.province_id
                            : type === "district"
-                           ? item?.code
+                           ? item?.district_id
                            : item?.code
                      }
                      value={
                         type === "province"
-                           ? item?.code
+                           ? item?.province_id
                            : type === "district"
-                           ? item?.code
+                           ? item?.district_id
                            : item?.code
                      }
                   >
                      {type === "province"
-                        ? item?.name
+                        ? item?.province_name
                         : type === "district"
-                        ? item?.name
+                        ? item?.district_name
                         : item?.value}
                   </option>
                );

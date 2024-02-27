@@ -22,4 +22,4 @@ export { default as Loading } from "./Loading";
 export { default as UpdatePost } from "./UpdatePost";
 export { default as SlickSlider } from "./Slider";
 export { default as BoxInfo } from "./BoxInfo";
-export { default as Map } from "./Map";
+// export { default as Map } from "./Map";

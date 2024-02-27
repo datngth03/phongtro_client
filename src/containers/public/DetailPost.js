@@ -2,7 +2,8 @@ import React, { useEffect, useState } from "react";
 import { Link, useParams, useNavigate, createSearchParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { getPostsLimit } from "../../store/actions";
-import { SlickSlider, BoxInfo, RelatedPost, Map } from "../../components";
+// import { SlickSlider, BoxInfo, RelatedPost, Map } from "../../components";
+import { SlickSlider, BoxInfo, RelatedPost } from "../../components";
 import icons from "../../ultils/icons";
 import { path } from "../../ultils/constant";
 
@@ -148,7 +149,8 @@ const DetailPost = () => {
             </div>
             <div className="flex flex-col p-6 pt-0 relative">
                <h2 className="font-semibold text-xl pb-4">Bản đồ</h2>
-               {posts[0] && <Map address={posts[0].address} />}
+               {/* {posts[0] && <Map address={posts[0].address} />} */}
+               {posts[0]}
 
                <div className="pt-8 text-gray-500">
                   Bạn đang xem nội dung tin đăng:{" "}
